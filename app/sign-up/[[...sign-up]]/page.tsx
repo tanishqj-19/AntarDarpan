@@ -1,7 +1,12 @@
 import { SignUp } from "@clerk/nextjs";
  
 const SignUpPage = () =>{
-    return <SignUp />
+    return <div className="flex justify-center items-center py-10">
+        <SignUp  
+            afterSignUpUrl={"/new-user"}
+            redirectUrl={"/new-user"}
+        />
+    </div>
 }
 
 export default SignUpPage;
