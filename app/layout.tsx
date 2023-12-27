@@ -7,7 +7,7 @@ import { dark } from '@clerk/themes'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Mood Craft',
+  title: 'Mind Gauge',
   description: 'Your AI-powered journal App.',
 }
 

@@ -5,7 +5,7 @@ const DashboardLayout = ({ children }) =>{
     return (
         <div className=" h-screen w-screen relative ">
             <aside className="bg-[#EDECE9] absolute top-0 left-0 w-[250px] h-full border-r border-black/10">
-                MoodCraft
+                Mind Gauge
             </aside>
             
             <div className="ml-[250px] h-full">
