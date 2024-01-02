@@ -2,9 +2,10 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button, Navbar } from 'flowbite-react';
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, auth } from "@clerk/nextjs";
 
 const Nav = ({link}) => {
+
     let name = "Sign In"
     if(link === '/new-user')
         name  = "Sign Up"

@@ -1,7 +1,11 @@
 import Link from "next/link"
 import { auth } from "@clerk/nextjs"
 import Nav from "@/components/Nav";
+
+
+
 export default async function Home() {
+  
   const {userId} = await auth();
 
   let href = userId ? '/journal' : '/new-user'

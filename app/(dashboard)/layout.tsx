@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }) =>{
             
             <div className="bg-neutral-200 ml-[250px] h-full">
                 <header className="h-[60px] flex justify-between">
-                    <h2 className="text-3xl px-8 font-bold leading-relaxed text-gray-800"> Journal </h2>
+                    <h2 className="text-3xl px-8 font-bold leading-relaxed text-black"> Journal </h2>
                     <div className=" mt-2 mr-2">
                         <UserButton afterSignOutUrl="/" />
                     </div>
