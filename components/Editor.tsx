@@ -1,29 +1,38 @@
 'use client'
 
-import { useState,  } from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 import { updateEntry } from '@/utils/api';
 import { useRouter } from 'next/navigation';
 import { useAutosave } from 'react-autosave';
+import { Spinner } from 'flowbite-react';
 
 const Editor = ({entry}) => {
     const [value, setValue] = useState(entry.content)
+    const [isloading, setIsLoading] = useState(false);
+    
+    // useAutosave({
+    //   data: value, 
+    //   onSave: async (_value) => {
+    //     setIsLoading(true)
+    //     const updated = await updateEntry(entry.id, _value)
+    //     setIsLoading(false)
 
-    useAutosave({
-      data: value, 
-      onSave: async (_value) => {
-        
-      }
-    })
+
+    //   }
+    // })
 
 
     const router = useRouter();
 
     const handleClick = async () => {
-      await updateEntry(entry.id, value);
-
-      router.push(`/journal/${entry.id}`)
+      setIsLoading(true);
+      const updated = await updateEntry(entry.id, value);
+      setIsLoading(false);
+      
     }
+
+   
   return (
     <section className='w-full max-w-full flex justify-start items-start 
     flex-col px-10'>
@@ -32,10 +41,21 @@ const Editor = ({entry}) => {
         Create Journal
         </h1>
 
+        {
+          isloading && <p className='mt-5 text-lg text-gray-600 sm:text-xl text-left max-w-md'>
+            Loading <Spinner />
+          </p>
+        }
+
         <form
       className='mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
       rounded-xl border border-gray-300 bg-neutral-200 shadow-lg p-5 '
-      onSubmit={() => {}}
+      onSubmit={async (e) => {
+        e.preventDefault();
+      
+        await handleClick();
+        router.push("/journal")
+      }}
       >
         <label>
           <span className='font-semibold text-base text-gray-800'> Your Journal </span>
@@ -53,7 +73,7 @@ const Editor = ({entry}) => {
 
         <div className='flex  mx-3 mb-5 gap-4'>
 
-          <Link href={"/journal"} className='text-grey-500 px-5 shadow-md py-1.5 border border-black/30 hover:bg-white hover:border-none rounded-full text-sm'>
+          <Link href={"/journal"}   className='text-grey-500 px-5 shadow-md py-1.5 border border-black/30 hover:bg-white hover:border-none rounded-full text-sm'>
             Cancel
           </Link>
 
