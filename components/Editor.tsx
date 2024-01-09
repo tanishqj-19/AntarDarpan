@@ -1,12 +1,29 @@
 'use client'
-import { Label, Textarea } from 'flowbite-react';
-import { useState } from 'react';
+
+import { useState,  } from 'react';
 import Link from 'next/link';
-
-
+import { updateEntry } from '@/utils/api';
+import { useRouter } from 'next/navigation';
+import { useAutosave } from 'react-autosave';
 
 const Editor = ({entry}) => {
     const [value, setValue] = useState(entry.content)
+
+    useAutosave({
+      data: value, 
+      onSave: async (_value) => {
+        
+      }
+    })
+
+
+    const router = useRouter();
+
+    const handleClick = async () => {
+      await updateEntry(entry.id, value);
+
+      router.push(`/journal/${entry.id}`)
+    }
   return (
     <section className='w-full max-w-full flex justify-start items-start 
     flex-col px-10'>
@@ -14,13 +31,6 @@ const Editor = ({entry}) => {
             bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent'>
         Create Journal
         </h1>
-
-        <p className=' text-lg text-gray-600 sm:text-xl 
-            text-left max-w-3xl'>
-            Embark on a transformative journaling experience by leveraging the power of AI to analyze 
-            and gain valuable insights from your personal reflections. 
-        </p>
-
 
         <form
       className='mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
@@ -41,19 +51,19 @@ const Editor = ({entry}) => {
 
         
 
-        {/* <div className='flex-end mx-3 mb-5 gap-4'>
+        <div className='flex  mx-3 mb-5 gap-4'>
 
-          <Link href={"/"} className='text-grey-500 text-sm'>
+          <Link href={"/journal"} className='text-grey-500 px-5 shadow-md py-1.5 border border-black/30 hover:bg-white hover:border-none rounded-full text-sm'>
             Cancel
           </Link>
 
-          <button type='submit' disabled={submitting}
-          className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'
+          <button type='submit' onClick={handleClick}
+          className='px-5 py-1.5 text-sm  bg-black rounded-full text-white shadow-md border'
           >
-            {submitting ? `${type}...`: type}
+            Update
           </button>
 
-        </div> */}
+        </div>
 
         
       </form>

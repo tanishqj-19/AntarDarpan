@@ -17,7 +17,7 @@ export const createNewEntry =  async () => {
 }
 
 
-export const updateEntry =async (id, content) => {
+export const updateEntry = async (id: any, content: any) => {
 
     const res = await fetch(new Request(createURL(`/api/journal/${id}`), {
         method: 'PATCH', 
@@ -28,5 +28,8 @@ export const updateEntry =async (id, content) => {
         const data = await res.json()
         return data.data;
     }
+
+
+    return {error: true, messageForUI: 'Your entry is not updated!!'}
     
 }
