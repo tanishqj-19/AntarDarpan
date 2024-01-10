@@ -35,8 +35,8 @@ const Editor = ({entry}) => {
    
   return (
     <section className='w-full max-w-full flex justify-start items-start 
-    flex-col px-10'>
-        <h1 className='text-4xl font-bold leading-[1.15]  py-4
+    flex-col px-10 '>
+        <h1 className='text-4xl font-bold leading-[1.15] py-2 
             bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent'>
         Create Journal
         </h1>
@@ -48,12 +48,12 @@ const Editor = ({entry}) => {
         }
 
         <form
-      className='mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
-      rounded-xl border border-gray-300 bg-neutral-200 shadow-lg p-5 '
+      className='mt-5 2xl:mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
+      rounded-xl border border-gray-300 bg-neutral-200 shadow-lg p-3 '
       onSubmit={async (e) => {
         e.preventDefault();
       
-        await handleClick();
+        // await handleClick();
         router.push("/journal")
       }}
       >
@@ -64,7 +64,7 @@ const Editor = ({entry}) => {
             value={value}
             onChange={(e)=> setValue(e.target.value)}
             required
-            className='w-full border-none flex rounded-lg h-[300px] mt-2 p-3 text-sm text-gray-600  bg-white/90
+            className='w-full border-none flex rounded-lg h-[200px] lg:h-[350px] 2xl:h-[600px] mt-2 p-3 text-sm text-gray-600  bg-white/90
             focus:outline-none focus:ring-0'
           />
         </label>

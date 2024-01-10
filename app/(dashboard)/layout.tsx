@@ -8,7 +8,7 @@ const DashboardLayout = ({ children }) =>{
                 Mind Gauge
             </aside>
             
-            <div className="bg-neutral-200 ml-[250px] h-full overflow-y-auto">
+            <div className="bg-[#E0E0E0] ml-[250px] h-full overflow-y-auto">
                 <header className="h-[60px] border-b border-black/10">
                     <div className="flex items-center justify-end h-full mr-2">
                         <UserButton afterSignOutUrl="/" />

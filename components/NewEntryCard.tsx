@@ -1,6 +1,7 @@
 'use client'
 
 import { createNewEntry } from "@/utils/api"
+import { revalidatePath } from "next/cache"
 import { useRouter } from 'next/navigation'
 
 const NewEntry = () => {
@@ -8,7 +9,7 @@ const NewEntry = () => {
 
   const handleOnClick = async () => {
     const data = await createNewEntry()
-
+    revalidatePath(`/journal/${data.id}`)
     router.push(`/journal/${data.id}`)
 
   }
