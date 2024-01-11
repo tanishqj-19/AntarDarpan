@@ -1,5 +1,6 @@
 import EntryCard from "@/components/EntryCard"
 import NewEntryCard from "@/components/NewEntryCard"
+import { analyze } from "@/utils/ai"
 import { getUserByClerkId } from "@/utils/auth"
 import { prisma } from "@/utils/db"
 import Link from "next/link"
@@ -16,7 +17,7 @@ const getEntries = async () => {
       createdAt: 'desc',
     }
   })
-
+  await analyze('create me a react component that renders a counting number');
   return entries;
 }
 

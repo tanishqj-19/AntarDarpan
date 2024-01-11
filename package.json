@@ -11,13 +11,19 @@
   "dependencies": {
     "@clerk/nextjs": "^4.28.1",
     "@clerk/themes": "^1.7.9",
+    "@google-ai/generativelanguage": "^0.2.1",
+    "@huggingface/inference": "^2.6.4",
+    "@langchain/community": "^0.0.16",
     "@prisma/client": "^5.7.1",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
+    "google-auth-library": "^8.9.0",
+    "langchain": "^0.1.2",
     "next": "14.0.4",
     "react": "^18",
     "react-autosave": "^0.4.4",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "retry-request": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
