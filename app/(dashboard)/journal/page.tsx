@@ -21,10 +21,14 @@ const getEntries = async () => {
       createdAt: 'desc',
     }
   })
-   await analyze(`I'm going to give you a journal entry, I want you to analyze for a few things. 
-                  I need the mood, a summary, what the subject is, and a color representing the mood.
-                  You need to respond back with formatted JSON like so:
-                    {"mood": "", "subject": "", "color": "", "negative": ""}.`);
+  //  await analyze(`
+  //  Today was a rollercoaster of emotions, 
+  //  a symphony of highs and lows. The morning sun brought a warm sense of optimism, 
+  //  yet by midday, frustration clouded my thoughts like a sudden storm. 
+  //  Despite the challenges, an unexpected kindness from a stranger turned my day around, 
+  //  leaving me with a grateful heart. As the sun set, a tinge of melancholy settled in, 
+  //  a reminder that even amidst chaos, moments of beauty can emerge. Tonight, 
+  //  I lay down with a mix of exhaustion and contentment, embracing the unpredictable dance of emotions that life orchestrates.`);
   
   return entries;
 }

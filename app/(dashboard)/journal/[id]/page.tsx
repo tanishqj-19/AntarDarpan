@@ -35,7 +35,7 @@ const EntryPage = async ({  params }) => {
       <div className="col-span-2">
         <Editor entry={my_entry}/>
       </div>
-      <div className="">
+      <div className="mt-5">
         <div className="bg-[#B0C4DE] px-6 py-10 rounded shadow-md">
           <h2 className="text-2xl">Analysis</h2>
         </div>

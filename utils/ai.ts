@@ -1,6 +1,7 @@
 import { GooglePaLM } from "@langchain/community/llms/googlepalm";
 import { StructuredOutputParser } from "langchain/output_parsers";
-import { PromptTemplate } from "langchain/prompts";
+import { PromptTemplate } from "@langchain/core/prompts";
+
 import {z} from 'zod';
 
 const parser = StructuredOutputParser.fromZodSchema(
@@ -14,7 +15,7 @@ const parser = StructuredOutputParser.fromZodSchema(
       .describe(
         'is the journal entry negative? (i.e. does it contain negative emotions?).'
       ),
-    summary: z.string().describe('quick summary of the entire entry.'),
+    summary: z.string().describe('Provide a short summary of the entire journal entry.'),
     color: z
       .string()
       .describe(
@@ -35,7 +36,7 @@ const getPrompt = async (content) => {
   const prompt = new PromptTemplate({
     template:
       "Analyze the following journal entry. Follow the instructions and format your response to match the format instructions, no matter what! \n{format_instructions}\n{entry}",
-      
+
     inputVariables: ['entry'],
     partialVariables: { format_instructions },
   })
@@ -48,19 +49,25 @@ const getPrompt = async (content) => {
 }
 
 
-export const analyze = async (prompt : string) => {
+export const analyze = async (prompt) => {
 
-  
+  const input = await getPrompt(prompt)
 
 
   const model = new GooglePaLM({
     
     temperature: 1, // OPTIONAL
     modelName: "models/text-bison-001", // OPTIONAL
-    maxOutputTokens: 1024, // OPTIONAL
+    
   });
+
   const res = await model.call(
-    prompt
+    input
   );
-  console.log({ res });
+  
+  try {
+    return parser.parse(res);
+  } catch (e) {
+    console.log(e);
+  }
 };

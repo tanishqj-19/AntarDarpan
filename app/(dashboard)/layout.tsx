@@ -10,12 +10,12 @@ const DashboardLayout = ({ children }) =>{
             </aside>
             
             <div className="bg-gray-300 shadow-md  rounded-lg ml-[250px] h-full overflow-y-auto">
-                <header className="h-[60px]">
+                <header className="h-[60px] shadow-md border-x-2 border-x-black/10">
                     <div className="flex items-center justify-end h-full mr-2">
                         <UserButton afterSignOutUrl="/" />
                     </div>
                 </header>
-                <div className="h-[calc(100vh-60px)] "> 
+                <div className="h-[calc(100vh-60px)] py-3"> 
                     {children} 
                 </div>
             </div>
