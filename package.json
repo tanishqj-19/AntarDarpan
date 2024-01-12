@@ -23,7 +23,8 @@
     "react": "^18",
     "react-autosave": "^0.4.4",
     "react-dom": "^18",
-    "retry-request": "^7.0.1"
+    "retry-request": "^7.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -49,7 +49,7 @@ const Editor = ({entry}) => {
 
         <form
       className='mt-5 2xl:mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
-      rounded-xl border border-gray-300 bg-neutral-200 shadow-lg p-3 '
+      rounded-xl border border-gray-300 bg-white shadow-lg p-3 '
       onSubmit={async (e) => {
         e.preventDefault();
       
@@ -58,7 +58,7 @@ const Editor = ({entry}) => {
       }}
       >
         <label>
-          <span className='font-semibold text-base text-gray-800'> Your Journal </span>
+          <span className='font-semibold text-base text-black'> Dear Journal, </span>
 
           <textarea 
             value={value}
@@ -73,7 +73,7 @@ const Editor = ({entry}) => {
 
         <div className='flex  mx-3 mb-5 gap-4'>
 
-          <Link href={"/journal"}   className='text-grey-500 px-5 shadow-md py-1.5 border border-black/30 hover:bg-white hover:border-none rounded-full text-sm'>
+          <Link href={"/journal"}   className='text-grey-500 px-5 shadow-xl py-1.5 border border-black/30 hover:bg-gray-200 hover:border-none rounded-full text-sm'>
             Cancel
           </Link>
 
