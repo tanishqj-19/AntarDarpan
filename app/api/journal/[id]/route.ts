@@ -1,3 +1,4 @@
+import { analyze } from "@/utils/ai";
 import { getUserByClerkId } from "@/utils/auth"
 import { prisma } from "@/utils/db";
 import { revalidatePath } from "next/cache";
@@ -19,6 +20,21 @@ export const PATCH = async (request : Request, {params}) => {
             content
         }
     })
+
+    const analysis = await analyze(updateEntry.content);
+
+    const updatedAnalysis = await prisma.analysis.upsert({
+        where: {
+            entryId: updateEntry.id,
+        },
+        create: {
+            entryId: updateEntry.id,
+            ...analysis,
+        },
+        update: analysis,
+
+    })
+    console.log(updatedAnalysis);
 
     
 
