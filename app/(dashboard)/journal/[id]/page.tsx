@@ -41,15 +41,15 @@ const EntryPage = async ({  params }) => {
         <Editor entry={my_entry}/>
       </div>
       <div className="mt-5">
-        <div className='px-6 py-10 rounded shadow-md' style={{backgroundColor: color}}>
+        <div className='px-6 py-10 rounded-tl-lg rounded-bl-lg shadow-md' style={{backgroundColor: color}}>
           <h2 className="text-2xl">Analysis</h2>
         </div>
 
-        <div>
+        <div className="rounded-tl-lg rounded-bl-lg py-4 ">
             <ul>
               {
                 analysisData.map(item => (
-                  <li className="flex items-center justify-between px-2 py-4 text-gray-800 border-b  border-black/10 shadom-md">
+                  <li className=" flex items-center justify-between px-2 py-5 text-gray-800 border-b shadow-lg rounded-tl-lg rounded-bl-lg   border-white/10 shadom-md">
                     <span className="text-lg font-semibold ">{item.name}</span>
                     <span className="">{item.value}</span>
 

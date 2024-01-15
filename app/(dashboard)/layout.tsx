@@ -5,11 +5,11 @@ import Bar from "@/components/Bar";
 const DashboardLayout = ({ children }) =>{
     return (
         <div className=" h-dvh w-100vh relative ">
-            <aside className="bg-white absolute top-0 left-0 w-64 h-full ">
+            <aside className="bg-white absolute top-0 left-0 w-60 h-full ">
                 <Bar />
             </aside>
             
-            <div className="bg-gray-300 shadow-md  rounded-lg ml-[250px] h-full overflow-y-auto">
+            <div className="bg-gray-300 shadow-md   ml-[250px] h-full overflow-y-auto">
                 <header className="h-[60px] shadow-md border-x-2 border-x-black/10">
                     <div className="flex items-center justify-end h-full mr-2">
                         <UserButton afterSignOutUrl="/" />

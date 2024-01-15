@@ -5,9 +5,25 @@ import {HiChartPie, HiInbox, HiViewBoards } from 'react-icons/hi';
 
 const customTheme: CustomFlowbiteTheme['sidebar'] = {
     root: {
-      inner: 'bg-white rounded',
+      inner: 'bg-white rounded h-full overflow-y-auto overflow-x-hidden py-4 px-3 dark:bg-gray-800',
       
     },
+    
+    item: {
+      base: "flex items-center justify-center rounded-xl p-2 text-base font-normal text-gray-900 hover:text-white hover:bg-black dark:text-white dark:hover:bg-gray-700",
+      active: "bg-white dark:bg-gray-700 ",
+      collapsed: {
+        insideCollapse: "group w-full pl-8 transition duration-75",
+        noIcon: "font-bold"
+      },
+      icon: {
+        base: "h-6 w-6 flex-shrink-0   rounded-xl transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white",
+        active: "text-gray-700 hover:text-white dark:text-gray-100"
+      },
+     
+    },
+    
+    
 };
 const Bar = () => {
   return (
