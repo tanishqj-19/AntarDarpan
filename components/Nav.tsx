@@ -14,21 +14,22 @@ const Nav = ({link}) => {
       <Navbar.Brand href="/">
         <img src="/favicon.ico" className="mr-3 h-10 sm:h-9" alt="Ming Gauge" />
         <span className="self-center 
-        whitespace-nowrap text-xl font-bold dark:text-white">MindGauge</span>
+        whitespace-nowrap text-2xl font-bold leading-[1.15] 
+        bg-gradient-to-r from-indigo-600 to-blue-900 bg-clip-text text-transparent">MindGauge</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Link href={link}>
-            <Button className='text-xl bg-black rounded-full px-6' >{name}</Button>
+            <Button className='text-xl bg-black rounded-full px-6 shadow-2xl border border-gray-600' >{name}</Button>
         </Link>
         
       </div>
 
      
       <Navbar.Collapse>
-        <Navbar.Link href="/"  className='text-xl' >
+        <Navbar.Link href="/"  className='text-xl font-semibold' >
           Home
         </Navbar.Link>
-        <Navbar.Link href="/about" className='text-xl' >About</Navbar.Link>
+        <Navbar.Link href="/about" className='text-xl font-semibold' >About</Navbar.Link>
         
       </Navbar.Collapse>
     </Navbar>

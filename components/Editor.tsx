@@ -63,7 +63,7 @@ const Editor = ({entry}) => {
 
             <form
           className='mt-5 2xl:mt-10 w-full max-w-3xl flex flex-col gap-7 overflow-hidden
-          rounded-xl border border-gray-300 bg-white shadow-lg p-3 '
+          rounded-xl border border-gray-300 bg-neutral-200 shadow-lg p-3 '
           onSubmit={async (e) => {
             e.preventDefault();
           
@@ -77,7 +77,7 @@ const Editor = ({entry}) => {
                 value={value}
                 onChange={(e)=> setValue(e.target.value)}
                 required
-                className='w-full border-none flex rounded-lg h-[200px] lg:h-[350px] 2xl:h-[600px] mt-2 p-3 text-sm text-gray-600  bg-white/90
+                className='w-full border-none flex rounded-lg h-[200px] lg:h-[350px] 2xl:h-[600px] mt-1 p-3 text-base text-black font-sans   bg-neutral-200
                 focus:outline-none focus:ring-0'
               />
             </label>
