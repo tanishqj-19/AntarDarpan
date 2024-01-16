@@ -71,3 +71,7 @@ export const analyze = async (prompt) => {
     console.log(e);
   }
 };
+
+const questionAnswer = () => {
+  
+}
