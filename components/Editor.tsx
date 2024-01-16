@@ -10,6 +10,7 @@ import { Spinner } from 'flowbite-react';
 const Editor = ({entry}) => {
     const [value, setValue] = useState(entry.content)
     const [isloading, setIsLoading] = useState(false);
+    const [analysis, setAnalysis] = useState(entry.analysis);
     
     // useAutosave({
     //   data: value, 
@@ -21,7 +22,7 @@ const Editor = ({entry}) => {
 
     //   }
     // })
-    var {mood, summary, color, subject, negative} = entry.analysis;
+    var {mood, summary, color, subject, negative} = analysis;
 
     const analysisData = [
       {name: 'Summary', value: summary},
@@ -37,6 +38,8 @@ const Editor = ({entry}) => {
     const handleClick = async () => {
       setIsLoading(true);
       const updated = await updateEntry(entry.id, value);
+      setAnalysis(updated.analysis)
+      setValue(updated.content)
       setIsLoading(false);
       
     }
@@ -65,7 +68,6 @@ const Editor = ({entry}) => {
             e.preventDefault();
           
             // await handleClick();
-            router.push("/journal")
           }}
           >
             <label>
@@ -99,18 +101,18 @@ const Editor = ({entry}) => {
         </section>
       </div>
 
-      <div className="mt-5 border-l border-black/10">
+      <div className="mt-5 ">
         <div className='px-6 py-10 rounded-tl-lg rounded-bl-lg shadow-md' style={{backgroundColor: color}}>
           <h2 className="text-2xl">Analysis</h2>
         </div>
 
-        <div className="rounded-tl-lg rounded-bl-lg py-4 ">
+        <div className=" py-4 ">
             <ul>
               {
                 analysisData.map(item => (
                   <li className=" flex items-center justify-between px-2 py-5 text-gray-800 border-b shadow-lg rounded-tl-lg rounded-bl-lg   border-white/10 shadom-md">
                     <span className="text-lg font-semibold ">{item.name}</span>
-                    <span className="">{item.value}</span>
+                    <span className="text-base font-sans pl-2 text-balance">{item.value}</span>
 
                   </li>
                 ))

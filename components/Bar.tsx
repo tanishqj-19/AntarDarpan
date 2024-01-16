@@ -5,12 +5,12 @@ import {HiChartPie, HiInbox, HiViewBoards } from 'react-icons/hi';
 
 const customTheme: CustomFlowbiteTheme['sidebar'] = {
     root: {
-      inner: 'bg-white rounded h-full overflow-y-auto overflow-x-hidden py-4 px-3 dark:bg-gray-800',
+      inner: 'rounded h-full  w-48 overflow-y-auto overflow-x-hidden py-4  mt-none dark:bg-gray-800',
       
     },
     
     item: {
-      base: "flex items-center justify-center rounded-xl p-2 text-base font-normal text-gray-900 hover:text-white hover:bg-black dark:text-white dark:hover:bg-gray-700",
+      base: "flex items-center justify-center font-sans rounded-xl p-2 text-base font-normal text-white/80 hover:text-black hover:bg-white dark:text-white dark:hover:bg-gray-700",
       active: "bg-white dark:bg-gray-700 ",
       collapsed: {
         insideCollapse: "group w-full pl-8 transition duration-75",
@@ -29,18 +29,18 @@ const Bar = () => {
   return (
     <Sidebar theme={customTheme} className='py-5 px-2 '>
       <Sidebar.Logo href="/" img="/favicon.ico" imgAlt="MindGauge logo">
-        <span className='text-2xl'>MindGauge</span>
+        <span className='text-2xl text-white font-sans'>Mind Gauge</span>
       </Sidebar.Logo>
       <Sidebar.Items className='py-5 px-2'>
         <Sidebar.ItemGroup className='py-5'>
           <Sidebar.Item href="/" icon={HiChartPie}>
-            <span className='font-semibold text-xl' >Home</span>
+            <span className='text-xl' >Home</span>
           </Sidebar.Item>
           <Sidebar.Item href="/journal" icon={HiViewBoards}>
-            <span className='font-semibold text-xl'>Journal</span>
+            <span className=' text-xl'>Journal</span>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiInbox}>
-            <span className='font-semibold text-xl'>History</span>
+            <span className=' text-xl'>History</span>
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

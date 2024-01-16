@@ -15,10 +15,10 @@ export const PATCH = async (request : Request, {params}) => {
                 id: params.id,
             },
         },
-
         data: {
-            content
-        }
+            content,
+        },
+       
     })
 
     const analysis = await analyze(updateEntry.content);
@@ -39,5 +39,5 @@ export const PATCH = async (request : Request, {params}) => {
     
 
 
-    return NextResponse.json({data: updateEntry})
+    return NextResponse.json({data: {...updateEntry, analysis: updatedAnalysis}})
 }
