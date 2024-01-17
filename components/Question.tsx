@@ -31,7 +31,7 @@ const Question = () => {
                 type="text"
                 value={value}
                 disabled = {loading}
-                onChange={(e) =>{ setValue(e.target.value)}}
+                onChange={(e) =>{ setValue(e.target.value) ;setResponse();}}
                 className=" w-[40rem] focus:bg-transparent font-sans bg-neutral-200 focus:border-black/20 border border-neutral-400  outline-0 focus:ring-0 shadow-xl rounded-2xl p-2 text-lg mr-3 ml-10"
                 
                 placeholder="Ask a question?"
@@ -46,7 +46,7 @@ const Question = () => {
             
       </form>
 
-      {loading && <p className="text-black ml-10"> Loading <Spinner/> </p>}
+      {loading && <p className="text-black ml-10 pt-1"> Loading <Spinner/> </p>}
       {response && <p className="text-black text-base font-sans pt-2 ml-10"> {response} </p>}
 
     </div>
