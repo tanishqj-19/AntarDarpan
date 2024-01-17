@@ -71,7 +71,7 @@ const Editor = ({entry}) => {
           }}
           >
             <label>
-              <span className='font-semibold text-base text-black'> Dear Journal, </span>
+              <span className='font-semibold text-base text-black'> Dear Me, </span>
 
               <textarea 
                 value={value}

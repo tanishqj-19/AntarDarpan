@@ -22,7 +22,7 @@ export default async function Home() {
                 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent"> Emotions </span>
                 Through Every Word.</h1>
               <p className='text-xl text-black/60 mb-6 '> 
-                  Our AI-infused journaling web app, MindGauge, intuitively 
+                  Our AI-infused journaling web app, AntarDarpan, intuitively 
                   deciphers the mood behind your thoughts, providing 
                   a personalized and insightful reflection of your inner world.  
               </p>

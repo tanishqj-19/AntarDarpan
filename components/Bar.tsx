@@ -28,8 +28,8 @@ const customTheme: CustomFlowbiteTheme['sidebar'] = {
 const Bar = () => {
   return (
     <Sidebar theme={customTheme} className='py-5 px-2 '>
-      <Sidebar.Logo href="/" img="/favicon.ico" imgAlt="MindGauge logo">
-        <span className='text-2xl text-white font-sans'>Mind Gauge</span>
+      <Sidebar.Logo href="/" img="/favicon.ico" imgAlt="AntarDarpan logo">
+        <span className='text-2xl text-white font-sans'>AntarDarpan</span>
       </Sidebar.Logo>
       <Sidebar.Items className='py-5 px-2'>
         <Sidebar.ItemGroup className='py-5'>

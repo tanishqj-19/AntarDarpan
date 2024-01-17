@@ -15,7 +15,7 @@ const Nav = ({link}) => {
         <img src="/favicon.ico" className="mr-3 h-10 sm:h-9" alt="Ming Gauge" />
         <span className="self-center 
         whitespace-nowrap text-2xl font-bold leading-[1.15] 
-        bg-gradient-to-r from-indigo-600 to-blue-900 bg-clip-text text-transparent">MindGauge</span>
+        bg-gradient-to-r from-indigo-600 to-blue-900 bg-clip-text text-transparent">AntarDarpan</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Link href={link}>
