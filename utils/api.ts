@@ -1,3 +1,4 @@
+import { questionAnswer } from "./ai"
 
 const createURL = (path: string) => {
     return window.location.origin + path
@@ -32,4 +33,19 @@ export const updateEntry = async (id: any, content: any) => {
 
     return {error: true, messageForUI: 'Your entry is not updated!!'}
     
+}
+
+export const askQuestion = async question => {
+    const res = await fetch(new Request(createURL(`/api/question`), {
+        method: 'POST', 
+        body: JSON.stringify({ question })
+    }))
+
+    if(res.ok){
+        const info = await res.json()
+        return info.data;
+    }
+
+
+    return {error: true, messageForUI: 'Your entry is not updated!!'}
 }

@@ -6,6 +6,7 @@ import { updateEntry } from '@/utils/api';
 import { useRouter } from 'next/navigation';
 import { useAutosave } from 'react-autosave';
 import { Spinner } from 'flowbite-react';
+import { revalidatePath } from 'next/cache';
 
 const Editor = ({entry}) => {
     const [value, setValue] = useState(entry.content)

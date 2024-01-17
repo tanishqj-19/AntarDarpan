@@ -1,8 +1,11 @@
 import { GooglePaLM } from "@langchain/community/llms/googlepalm";
+import { GooglePaLMEmbeddings } from "@langchain/community/embeddings/googlepalm";
 import { StructuredOutputParser } from "langchain/output_parsers";
 import { PromptTemplate } from "@langchain/core/prompts";
-
+import { Document } from "@langchain/core/documents";
+import { loadQARefineChain } from "langchain/chains";
 import {z} from 'zod';
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
@@ -19,7 +22,7 @@ const parser = StructuredOutputParser.fromZodSchema(
     color: z
       .string()
       .describe(
-        'a hexidecimal color code that represents the mood of the entry. Example #0101fe for blue representing happiness.Strictly provide light or pastel colors colors as my background consist of black and white theme.'
+        'a hexidecimal color code that represents the mood of the entry.Strictly provide lighte colors.'
       ),
     // sentimentScore: z
     //   .number()
@@ -61,7 +64,7 @@ export const analyze = async (prompt) => {
     
   });
 
-  const res = await model.call(
+  const res = await model.invoke(
     input
   );
   
@@ -72,6 +75,29 @@ export const analyze = async (prompt) => {
   }
 };
 
-const questionAnswer = async (question, entries) => {
-  
+export const questionAnswer = async (question, entries) => {
+  const docs = entries.map(
+    (entry) =>
+      new Document({
+        pageContent: entry.content,
+        metadata: { source: entry.id, date: entry.createdAt },
+      })
+  )
+
+  const model = new GooglePaLM({temperature: 0, 
+          modelName: "models/text-bison-001", 
+        });
+
+  const chain = loadQARefineChain(model);
+  const embeddings = new GooglePaLMEmbeddings();
+  const store = await MemoryVectorStore.fromDocuments(docs, embeddings);
+
+  const relevantDocs = await store.similaritySearch(question)
+
+  const res = await chain.invoke({
+    input_documents: relevantDocs,
+    question,
+  })
+
+  return res.output_text
 }
