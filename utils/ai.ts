@@ -72,6 +72,6 @@ export const analyze = async (prompt) => {
   }
 };
 
-const questionAnswer = () => {
+const questionAnswer = async (question, entries) => {
   
 }

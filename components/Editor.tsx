@@ -86,7 +86,7 @@ const Editor = ({entry}) => {
 
             <div className='flex  mx-3 mb-5 gap-4'>
 
-              <Link href={"/journal"}   className='text-grey-500 px-5 shadow-xl py-1.5 border border-black/30 hover:bg-gray-200 hover:border-none rounded-full text-sm'>
+              <Link href={"/journal"}   className='text-grey-500 px-5 bg-white shadow-xl py-1.5 border border-black/20 hover:bg-sky-300 hover:border-none rounded-full text-sm'>
                 Cancel
               </Link>
 
