@@ -1,7 +1,8 @@
 'use client'
 import { Sidebar } from 'flowbite-react';
 import type { CustomFlowbiteTheme } from 'flowbite-react';
-import {HiChartPie, HiInbox, HiViewBoards } from 'react-icons/hi';
+import {HiChartPie, HiDesktopComputer, HiViewBoards, HiHome} from 'react-icons/hi';
+
 
 const customTheme: CustomFlowbiteTheme['sidebar'] = {
     root: {
@@ -33,13 +34,13 @@ const Bar = () => {
       </Sidebar.Logo>
       <Sidebar.Items className='py-5 px-2'>
         <Sidebar.ItemGroup className='py-5'>
-          <Sidebar.Item href="/" icon={HiChartPie}>
+          <Sidebar.Item href="/" icon={HiHome}>
             <span className='text-xl' >Home</span>
           </Sidebar.Item>
           <Sidebar.Item href="/journal" icon={HiViewBoards}>
             <span className=' text-xl'>Journal</span>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
+          <Sidebar.Item href="/history" icon={HiChartPie}>
             <span className=' text-xl'>History</span>
           </Sidebar.Item>
         </Sidebar.ItemGroup>

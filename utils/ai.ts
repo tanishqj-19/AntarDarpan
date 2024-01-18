@@ -11,7 +11,7 @@ const parser = StructuredOutputParser.fromZodSchema(
   z.object({
     mood: z
       .string()
-      .describe('the mood of the person who wrote the journal entry.It should be an emotion for example happy, sad, reflective.'),
+      .describe('the mood of the person who wrote the journal entry.It should be an emotion for example fear, anger, joy, sad, contempt, disgust, surprise.'),
     subject: z.string().describe('the subject of the journal entry.'),
     negative: z
       .boolean()
@@ -22,13 +22,13 @@ const parser = StructuredOutputParser.fromZodSchema(
     color: z
       .string()
       .describe(
-        'a hexidecimal color code that represents the mood of the entry.Strictly provide lighte colors.'
+        'a hexidecimal color code that represents the mood of the entry, only provider lighter shades of colors.'
       ),
-    // sentimentScore: z
-    //   .number()
-    //   .describe(
-    //     'sentiment of the text and rated on a scale from -10 to 10, where -10 is extremely negative, 0 is neutral, and 10 is extremely positive.'
-    //   ),
+    sentimentScore: z
+      .number()
+      .describe(
+        'sentiment of the text and rated on a scale from -10 to 10, where -10 is extremely negative, 0 is neutral, and 10 is extremely positive.'
+      ),
   })
 )
 

@@ -23,15 +23,14 @@ const Editor = ({entry}) => {
 
     //   }
     // })
-    var {mood, summary, color, subject, negative} = analysis;
+    var {mood, summary, color, subject, negative, sentiment} = analysis;
 
     const analysisData = [
       {name: 'Summary', value: summary},
       {name: 'Subject', value: subject},
       {name: 'Mood', value: mood},
       {name: 'Negative', value: negative ? 'True' : 'False'},
-      
-
+      // {name: 'Sentiment Score', value: sentiment},
     ]
 
     const router = useRouter();

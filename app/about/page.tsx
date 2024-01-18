@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div className="space-y-2">
             <h2 className="text-3xl font-bold leading-[1.15] 
                 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Our Mission
+                Our Mission:
             </h2>
             <p className="text-gray-800">
             At AntarDarpan, our mission is to empower individuals to gain deeper insights into their emotional well-being through the lens of AI-driven analysis.

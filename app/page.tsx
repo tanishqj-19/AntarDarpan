@@ -29,7 +29,7 @@ export default async function Home() {
             <div>
               <Link href={href}>
                 <button className="bg-black text-white  drop-shadow-md shadow-xl 
-                rounded-full px-6 py-4 text-xl transition easy-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300  ">
+                rounded-full px-6 py-4 text-xl transition easy-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-800 duration-300  ">
                   Get Started
                 </button>
               </Link>
