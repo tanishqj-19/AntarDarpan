@@ -15,9 +15,13 @@
     "@huggingface/inference": "^2.6.4",
     "@langchain/community": "^0.0.16",
     "@prisma/client": "^5.7.1",
+    "@testing-library/jest-dom": "^6.2.1",
+    "@testing-library/react": "^14.1.2",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
     "google-auth-library": "^8.9.0",
+    "jsdom": "^24.0.0",
     "langchain": "^0.1.2",
     "next": "14.0.4",
     "react": "^18",
@@ -25,6 +29,7 @@
     "react-dom": "^18",
     "recharts": "^2.10.4",
     "retry-request": "^7.0.1",
+    "vitest": "^1.2.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
