@@ -30,5 +30,5 @@ vi.mock('next/font/google', () => {
 
 test(`Home`, async () => {
   render(await Page())
-  expect(screen.getByText('Unleashing AI Harmony in Your Journal, Decoding Emotions Through Every Word.')).toBeTruthy()
+  expect(screen.getByText('Our AI-infused journaling web app, AntarDarpan, intuitively deciphers the mood behind your thoughts, providing a personalized and insightful reflection of your inner world.')).toBeTruthy()
 })

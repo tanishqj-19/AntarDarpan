@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { auth } from "@clerk/nextjs"
-import Nav from "@/components/Nav";
+import Nav from "../components/Nav";
 
 
 
