@@ -29,6 +29,8 @@
     "react-autosave": "^0.4.4",
     "react-dom": "^18",
     "recharts": "^2.10.4",
+    "request": "^2.88.2",
+    "requests": "^0.3.0",
     "retry-request": "^7.0.1",
     "vitest": "^1.2.1",
     "zod": "^3.22.4"
