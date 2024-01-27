@@ -7,7 +7,7 @@ const EntryCard = ({ entry }) => {
   const date = new Date(entry.createdAt).toDateString()
   const mood = entry.analysis?.mood.charAt(0).toUpperCase() + entry.analysis?.mood.slice(1);
   const subject = entry.analysis?.subject.charAt(0).toUpperCase() + entry.analysis?.subject.slice(1);
-  const summary = entry.analysis.summary + ".";
+  const summary = entry.analysis?.summary + ".";
 
   
   return (

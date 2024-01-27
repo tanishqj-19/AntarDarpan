@@ -76,7 +76,7 @@ export const analyze = async (prompt) => {
 };
 
 export const questionAnswer = async (question, entries) => {
-  const docs = entries.map(
+  const docs = await entries.map(
     (entry) =>
       new Document({
         pageContent: entry.content,
