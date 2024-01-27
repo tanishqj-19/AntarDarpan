@@ -8,6 +8,7 @@ const NewEntry = () => {
   const router = useRouter()
 
   const handleOnClick = async () => {
+   
     const data = await createNewEntry()
     // revalidatePath(`/journal/${data.id}`)
     router.push(`/journal/${data.id}`)
